@@ -29,6 +29,7 @@ import BuyerRoute from "./BuyerRoute";
 import PrivateRoute from "./PrivateRoute";
 import SellerRoute from "./SellerRoute";
 import Blog from "../Pages/Blog/Blog";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const routes = createBrowserRouter([
   {
@@ -46,16 +47,20 @@ export const routes = createBrowserRouter([
         path: "/products/:id",
         element: <ProductOverview></ProductOverview>,
         loader: ({ params }) =>
-          fetch(`${import.meta.env.VITE_apiURL}/products/${params.id}`),
+          fetch(
+            `${
+              import.meta.env.VITE_apiURL || "http://localhost:3000"
+            }/products/${params.id}`
+          ),
       },
       {
         path: "/category/:category",
         element: <CategoryProducts></CategoryProducts>,
         loader: ({ params }) =>
           fetch(
-            `${import.meta.env.VITE_apiURL}/products-category/${
-              params.category
-            }`
+            `${
+              import.meta.env.VITE_apiURL || "http://localhost:3000"
+            }/products-category/${params.category}`
           ),
       },
       { path: "/carts", element: <Cart></Cart> },
@@ -163,6 +168,10 @@ export const routes = createBrowserRouter([
                 <MyOrders></MyOrders>
               </BuyerRoute>
             ),
+          },
+          {
+            path: "/dashboard/payment",
+            element: <Payment></Payment>,
           },
         ],
       },
