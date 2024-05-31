@@ -150,7 +150,7 @@ const Cart = () => {
 
                     <div className="flex justify-end">
                       <Link
-                        to="/checkout"
+                        to="/dashboard/payment"
                         className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600">
                         Checkout
                       </Link>

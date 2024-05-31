@@ -15,14 +15,12 @@ const CheckoutForm = () => {
   const [axiosSecure] = useAxiosSecure();
   const { user } = useAuth();
   const [cart, refetch] = useCart();
-  console.log("🚀 ~ CheckoutForm ~ cart:", cart);
   const navigate = useNavigate();
 
   const totalPrice = cart.reduce(
     (total, item) => total + item.product_resale_price,
     0
   );
-  console.log("🚀 ~ CheckoutForm ~ totalPrice:", totalPrice);
 
   useEffect(() => {
     if (totalPrice > 0) {
@@ -57,7 +55,7 @@ const CheckoutForm = () => {
       console.log("payment error", error);
       setError(error.message);
     } else {
-      console.log("payment method", paymentMethod);
+      // console.log("payment method", paymentMethod);
       setError("");
     }
 
@@ -72,6 +70,7 @@ const CheckoutForm = () => {
           },
         },
       });
+    // console.log(paymentIntent);
 
     if (confirmError) {
       console.log("confirm error");
@@ -95,7 +94,8 @@ const CheckoutForm = () => {
         const res = await axiosSecure.post("/payments", payment);
         console.log("payment saved", res.data);
         refetch();
-        if (res.data?.paymentResult?.insertedId) {
+        console.log(res);
+        if (res.data?.data?.insertedId) {
           Swal.fire({
             position: "top",
             icon: "success",

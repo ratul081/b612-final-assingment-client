@@ -47,20 +47,16 @@ export const routes = createBrowserRouter([
         path: "/products/:id",
         element: <ProductOverview></ProductOverview>,
         loader: ({ params }) =>
-          fetch(
-            `${
-              import.meta.env.VITE_apiURL || "http://localhost:3000"
-            }/products/${params.id}`
-          ),
+          fetch(`${import.meta.env.VITE_apiURL}/products/${params.id}`),
       },
       {
         path: "/category/:category",
         element: <CategoryProducts></CategoryProducts>,
         loader: ({ params }) =>
           fetch(
-            `${
-              import.meta.env.VITE_apiURL || "http://localhost:3000"
-            }/products-category/${params.category}`
+            `${import.meta.env.VITE_apiURL}/products-category/${
+              params.category
+            }`
           ),
       },
       { path: "/carts", element: <Cart></Cart> },

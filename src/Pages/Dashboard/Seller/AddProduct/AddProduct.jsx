@@ -66,7 +66,7 @@ const AddProduct = () => {
                   showConfirmButton: false,
                   timer: 1500,
                 });
-                navigate("/dashboard/my-product");
+                navigate("/dashboard/my-products");
               } else {
                 console.log(res.data.data);
                 toast.error(res.data.data.message);
