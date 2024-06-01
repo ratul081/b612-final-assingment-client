@@ -11,11 +11,11 @@ const useBuyer = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await axiosSecure.get(`/users/buyer/${user?.email}`);
-      // console.log(res.data);
+      // //console.log(res.data);
       return res.data.isBuyer;
     },
   });
-  // console.log(isBuyer);
+  // //console.log(isBuyer);
   return [isBuyer, isBuyerLoading];
 };
 export default useBuyer;

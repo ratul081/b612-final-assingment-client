@@ -15,7 +15,7 @@ const Item = ({ data, handleDelete }) => {
     product_postdate,
     product_id,
   } = data;
-  console.log("🚀 ~ Item ~ data:", data);
+  // //console.log("🚀 ~ Item ~ data:", data);
   return (
     <div className="mt-8">
       <ul className="space-y-4">

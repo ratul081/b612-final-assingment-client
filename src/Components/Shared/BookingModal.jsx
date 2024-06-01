@@ -13,6 +13,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
     _id,
     product_condition,
     product_image,
+    product_email,
     product_category,
   } = productDetails;
   const [axiosSecure] = useAxiosSecure();
@@ -26,6 +27,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
     const bookingDetails = {
       product_id: _id,
       product_name,
+      product_email,
       product_image,
       product_condition,
       product_category,
@@ -43,7 +45,7 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
         if (res.data.data.acknowledged) {
           Swal.fire({
             icon: "success",
-            title: "Product added",
+            title: `${product_name} added to cart`,
             showConfirmButton: false,
             timer: 1500,
           });

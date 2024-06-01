@@ -15,7 +15,7 @@ const ReportedItems = () => {
       return res.data.data;
     },
   });
-  // console.log(reportedItems[0]);
+  // //console.log(reportedItems[0]);
   return (
     <div>
       <section>

@@ -16,16 +16,16 @@ const LogIn = () => {
   const { signIn, googleSignIn } = useAuth();
   const [loginError, setLoginError] = useState("");
   const handleLogin = (data) => {
-    console.log(data);
+    //console.log(data);
     setLoginError("");
     signIn(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        // //console.log(user);
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        // console.log(error.message);
+        // //console.log(error.message);
         setLoginError(error.message);
       });
   };
@@ -37,7 +37,7 @@ const LogIn = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log("From Google SignIn", error);
+        //console.log("From Google SignIn", error);
         toast.error(error.message.slice(10));
       });
   };
@@ -135,7 +135,9 @@ const LogIn = () => {
                     Forgot your password?
                   </Link>
                 </div>
-                {loginError && <p className="text-red-600 mt-2">{loginError}</p>}
+                {loginError && (
+                  <p className="text-red-600 mt-2">{loginError}</p>
+                )}
               </form>
             </div>
           </div>

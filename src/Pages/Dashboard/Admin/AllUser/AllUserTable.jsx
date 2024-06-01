@@ -13,9 +13,9 @@ const AllUserTable = ({ userData, refetch }) => {
     user_phoneNumber,
   } = userData;
   const handleMakeAdmin = (user) => {
-    console.log("🚀 ~ handleMakeAdmin ~ user:", user);
+    // //console.log("🚀 ~ handleMakeAdmin ~ user:", user);
     axiosSecure.patch(`/users/admin/${user?._id}`).then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       if (res.data.data.modifiedCount > 0) {
         refetch();
         Swal.fire({
@@ -80,9 +80,7 @@ const AllUserTable = ({ userData, refetch }) => {
               Make admin
             </button>
           )}
-          <button
-            onClick={() => handleDeleteUser(userData)}
-            className="btn-lg">
+          <button onClick={() => handleDeleteUser(userData)} className="btn-lg">
             <FaTrashAlt className="text-red-600"></FaTrashAlt>
           </button>
         </div>

@@ -22,7 +22,7 @@ const MyOrders = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/carts/${id}`).then((res) => {
-          console.log(res.data);
+          //console.log(res.data);
           if (res.data.data.deletedCount > 0) {
             refetch();
             Swal.fire({

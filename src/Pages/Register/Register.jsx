@@ -24,7 +24,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSignUp = (data) => {
-    console.log("🚀 ~ handleSignUp ~ data:", data);
+    //console.log("🚀 ~ handleSignUp ~ data:", data);
     setSignUPError("");
     const formData = new FormData();
     formData.append("image", data.image[0]);
@@ -37,11 +37,11 @@ const Register = () => {
       .then((imageUploadRes) => {
         if (imageUploadRes.data.success) {
           const imgURL = imageUploadRes.data.data.display_url;
-          console.log("🚀 ~ file: AddDoctors.jsx:26 ~ .then ~ imgURL:", imgURL);
+          //console.log("🚀 ~ file: AddDoctors.jsx:26 ~ .then ~ imgURL:", imgURL);
           createUser(data.email, data.password)
             .then((result) => {
               const user = result.user;
-              // console.log(user);
+              // //console.log(user);
               const userInfo = {
                 displayName: data?.name,
               };
@@ -55,7 +55,7 @@ const Register = () => {
                     user_image: imgURL,
                   };
                   saveUser(fromUserData);
-                  console.log(fromUserData);
+                  //console.log(fromUserData);
                   reset();
                   Swal.fire({
                     // position: "top-end",
@@ -69,7 +69,7 @@ const Register = () => {
               navigate("/");
             })
             .catch((error) => {
-              // console.log(error);
+              // //console.log(error);
               setSignUPError(error.message);
               toast.error(error.message);
             });
@@ -80,7 +80,7 @@ const Register = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        //console.log(user);
         const googleUserData = {
           user_name: user?.displayName,
           user_email: user?.email,
@@ -88,7 +88,7 @@ const Register = () => {
           user_accountType: "buyer",
         };
         saveUser(googleUserData);
-        console.log("Google", googleUserData);
+        //console.log("Google", googleUserData);
         navigate("/");
       })
       .catch((error) => {

@@ -23,7 +23,7 @@ const MyProducts = () => {
 
   const handleAddProductAdvertised = (id) => {
     axiosSecure.patch(`/product/ad/${id}`).then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       if (res.data.data.modifiedCount > 0) {
         refetch();
         Swal.fire({
@@ -48,7 +48,7 @@ const MyProducts = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/product/${id}`).then((res) => {
-          console.log(res.data);
+          //console.log(res.data);
           if (res.data.data.deletedCount > 0) {
             refetch();
             Swal.fire({

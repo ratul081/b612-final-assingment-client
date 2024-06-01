@@ -16,7 +16,7 @@ const AllUser = () => {
       return res.data.data;
     },
   });
-  // console.log("🚀 ~ AllUser ~ allUser:", allUser);
+  // //console.log("🚀 ~ AllUser ~ allUser:", allUser);
   return (
     <div>
       <p className="text-center text-3xl font-semibold mb-8">Users</p>

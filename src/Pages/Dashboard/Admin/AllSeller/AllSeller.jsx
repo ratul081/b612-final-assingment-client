@@ -19,11 +19,11 @@ const AllSeller = () => {
       return res.data.data;
     },
   });
-  console.log(allSellers);
+  // //console.log(allSellers);
   const handleVerifySeller = (user) => {
-    console.log("🚀 ~ handleVerifySeller ~ user:", user);
+    // //console.log("🚀 ~ handleVerifySeller ~ user:", user);
     axiosSecure.patch(`/users/verify/${user?._id}`).then((res) => {
-      console.log(res.data);
+      // //console.log(res.data);
       if (res.data.data.modifiedCount > 0) {
         refetch();
         Swal.fire({

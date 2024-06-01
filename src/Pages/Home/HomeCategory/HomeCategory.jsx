@@ -35,8 +35,9 @@ const HomeCategory = () => {
         </h1>
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
           {categoriesShow &&
-            categoriesShow.map((category) => (
+            categoriesShow.map((category, idx) => (
               <div
+                key={idx}
                 className="flex items-end overflow-hidden bg-cover rounded-lg h-96"
                 style={{
                   backgroundImage:

@@ -80,7 +80,7 @@ const NavBar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost text-xl">
-            daisyUI
+            Use ME
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

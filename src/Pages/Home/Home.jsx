@@ -1,10 +1,8 @@
 import React from "react";
-import Breadcrumbs from "../../Components/Shared/Breadcrumbs";
-import HomeBanner from "./HomeBanner/HomeBanner";
-import Newsletter from "./Newsletter/Newsletter";
-import Pagination from "../../Components/Shared/Pagination";
 import JustForYou from "../Dashboard/Buyer/MyWhitelist/JustForYou";
+import HomeBanner from "./HomeBanner/HomeBanner";
 import HomeCategory from "./HomeCategory/HomeCategory";
+import Newsletter from "./Newsletter/Newsletter";
 
 const Home = () => {
   return (
@@ -13,7 +11,6 @@ const Home = () => {
       <JustForYou></JustForYou>
       <HomeCategory></HomeCategory>
       <Newsletter></Newsletter>
-      <Pagination></Pagination>
     </div>
   );
 };

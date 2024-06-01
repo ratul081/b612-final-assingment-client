@@ -19,7 +19,7 @@ const Categories = () => {
   const categories = [
     ...new Set(products.map((item) => item.product_category)),
   ];
-  console.log("🚀 ~ categories ~ categories:", categories);
+  //console.log("🚀 ~ categories ~ categories:", categories);
 
   return (
     <Pagination

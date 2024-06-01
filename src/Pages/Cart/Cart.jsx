@@ -6,7 +6,7 @@ import useCart from "../../hooks/useCart";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
-  console.log("🚀 ~ Cart ~ cart:", cart);
+  //console.log("🚀 ~ Cart ~ cart:", cart);
   const totalPrice = cart.reduce(
     (total, item) => total + parseFloat(item.product_resale_price),
     0
@@ -24,7 +24,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/carts/${id}`).then((res) => {
-          console.log(res.data);
+          // //console.log(res.data);
           if (res.data.data.deletedCount > 0) {
             refetch();
             Swal.fire({
@@ -69,9 +69,7 @@ const Cart = () => {
                               <div>
                                 <dt className="inline">Price:</dt>
                                 <dd className="inline">
-                                  {(cartProduct?.product_resale_price).toFixed(
-                                    3
-                                  )}
+                                  {(cartProduct?.product_resale_price).toFixed(3)}
                                 </dd>
                               </div>
                               <div>

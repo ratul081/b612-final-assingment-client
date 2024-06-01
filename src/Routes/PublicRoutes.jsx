@@ -12,7 +12,10 @@ import ReportedItems from "../Pages/Dashboard/Admin/ReportedItems/ReportedItems"
 import BuyerDashboard from "../Pages/Dashboard/Buyer/BuyerDashboard";
 import MyOrders from "../Pages/Dashboard/Buyer/MyOrders/MyOrders";
 // import MyWishlist from "../Pages/Dashboard/Buyer/MyWhitelist/MyWishlist";
+import Blog from "../Pages/Blog/Blog";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/Payment/PaymentHistory";
 import AddProduct from "../Pages/Dashboard/Seller/AddProduct/AddProduct";
 import MyBuyers from "../Pages/Dashboard/Seller/MyBuyers/MyBuyers";
 import MyProducts from "../Pages/Dashboard/Seller/MyProducts/MyProducts";
@@ -28,8 +31,6 @@ import AdminRoute from "./AdminRoute";
 import BuyerRoute from "./BuyerRoute";
 import PrivateRoute from "./PrivateRoute";
 import SellerRoute from "./SellerRoute";
-import Blog from "../Pages/Blog/Blog";
-import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const routes = createBrowserRouter([
   {
@@ -168,6 +169,10 @@ export const routes = createBrowserRouter([
           {
             path: "/dashboard/payment",
             element: <Payment></Payment>,
+          },
+          {
+            path: "/dashboard/payment-history",
+            element: <PaymentHistory></PaymentHistory>,
           },
         ],
       },

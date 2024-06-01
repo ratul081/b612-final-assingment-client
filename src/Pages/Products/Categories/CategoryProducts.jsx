@@ -6,7 +6,7 @@ import ProductsDisplay from "../ProductsDisplay/ProductsDisplay";
 
 const CategoryProducts = () => {
   const categoryProduct = useLoaderData().data;
-  console.log("🚀 ~ CategoryProducts ~ categoryProduct:", categoryProduct);
+  //console.log("🚀 ~ CategoryProducts ~ categoryProduct:", categoryProduct);
   const navigate = useNavigate();
   return (
     <div className="md:mt-12 sm-8">

@@ -14,6 +14,7 @@ const DashboardSidebar = () => {
           Dashboard
         </Link>
       </li>
+
       {isAdmin && (
         <>
           <li>
@@ -68,6 +69,11 @@ const DashboardSidebar = () => {
           </li>
         </>
       )}
+      <li className="mt-8">
+        <Link className="text-xl font-semibold" to="/dashboard/payment-history">
+          Payment History
+        </Link>
+      </li>
     </>
   );
 };

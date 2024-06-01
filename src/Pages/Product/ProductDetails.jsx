@@ -3,7 +3,7 @@ import { CiHeart } from "react-icons/ci";
 import { TbTruckDelivery, TbTruckReturn } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-const ProductDetails = ({ productData }) => {
+const ProductDetails = ({ productData, setProductDetails }) => {
   const [axiosSecure] = useAxiosSecure();
   const {
     product_name,
@@ -21,7 +21,7 @@ const ProductDetails = ({ productData }) => {
 
   const handleReportItem = (id) => {
     axiosSecure.patch(`/product/report/${id}`).then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       if (res.data.data.modifiedCount > 0) {
         Swal.fire({
           icon: "success",
@@ -43,12 +43,15 @@ const ProductDetails = ({ productData }) => {
       <p>Posted on: {product_postdate}</p>
       <p>Contact Number: {product_phoneNumber}</p>
       <div className="flex gap-6">
-        <label htmlFor="booking-modal" className="btn btn-error text-white">
+        <label
+          htmlFor="booking-modal"
+          onClick={() => setProductDetails(productData)}
+          className="btn btn-error text-white">
           Book now
         </label>
         <button
           onClick={() => handleReportItem(productData._id)}
-          className={`btn btn-ghost  text-white ${
+          className={`btn btn-warning  ${
             productData?.reported && "btn-disabled"
           }`}>
           Report

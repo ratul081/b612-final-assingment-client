@@ -6,7 +6,7 @@ import useCart from "../../hooks/useCart";
 
 const ProductOverview = () => {
   const productData = useLoaderData().data;
-  const [productDetails, setProductDetails] = useState(productData);
+  const [productDetails, setProductDetails] = useState([]);
   return (
     <div className="m-6 md:m-10 md:flex md:gap-12 justify-center">
       <div className="md:w-1/2">
@@ -18,7 +18,9 @@ const ProductOverview = () => {
         />
       </div>
       <div className="md:w-1/2">
-        <ProductDetails productData={productData}></ProductDetails>
+        <ProductDetails
+          productData={productData}
+          setProductDetails={setProductDetails}></ProductDetails>
       </div>
       {productDetails && (
         <BookingModal

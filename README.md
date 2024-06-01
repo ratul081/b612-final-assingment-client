@@ -8,7 +8,7 @@
 
 ### Features
 
-- A multi-vendor pc & gadget-selling website where sellers can add products for sale.
+- A multi-vendor phone selling website where sellers can add products for sale.
 - 3 types of users can use this website. Buyer, seller and admin. Different dashboards for everyone.
 - Buyers can add to cart and add to wishlist a product. From the wishlist or cart, a user can purchase
   products by using the Stripe payment method. The seller can add products, and advertise products.
