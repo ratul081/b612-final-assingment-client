@@ -14,7 +14,7 @@ const PaymentHistory = () => {
       return res.data.data;
     },
   });
-  console.log(payments);
+  // console.log(payments);
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -42,7 +42,7 @@ const PaymentHistory = () => {
                 className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 {payment?.transactionId}
               </th>
-              <td className="px-6 py-4">৳ {payment?.price}</td>
+              <td className="px-6 py-4">৳ {payment?.totalPrice.toFixed(2)}</td>
               <td className="px-6 py-4">{payment?.status}</td>
             </tr>
           ))}

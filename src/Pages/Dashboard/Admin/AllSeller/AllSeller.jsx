@@ -46,8 +46,7 @@ const AllSeller = () => {
             <tr>
               <th>Name</th>
               <th>Email</th>
-              <th>Verify</th>
-              <th></th>
+              <th className="flex justify-center">Verify</th>
             </tr>
           </thead>
           <tbody>

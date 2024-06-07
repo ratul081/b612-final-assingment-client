@@ -6,11 +6,11 @@ import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCart from "../../../hooks/useCart";
 
-const CheckoutFrom = () => {
+const PaymentFrom = () => {
   const [error, setError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
-  // //console.log("🚀 ~ CheckoutFrom ~ transactionId:", transactionId);
+  // //console.log("🚀 ~ PaymentFrom ~ transactionId:", transactionId);
   const stripe = useStripe();
   const elements = useElements();
   const [axiosSecure] = useAxiosSecure();
@@ -99,7 +99,7 @@ const CheckoutFrom = () => {
         //console.log("payment saved", res.data);
         refetch();
         // //console.log(res);
-        if (res.data?.data?.insertedId) {
+        if (res.data?.data?.paymentResult?.insertedId) {
           Swal.fire({
             // position: "top",
             icon: "success",
@@ -156,13 +156,12 @@ const CheckoutFrom = () => {
                   />
                 </div>
               </div>
-              <input
-                type="submit"
-                value="Pay"
+              <button
                 className={` btn mt-4 w-full py-3.5 text-sm bg-purple-500 text-white rounded-md hover:bg-purple-600 ${
                   (!stripe || !clientSecret) && "btn-disabled"
-                } tracking-wide`}
-              />
+                } tracking-wide`}>
+                Pay
+              </button>
               <p className="text-red-600">{error}</p>
               {transactionId && (
                 <p className="text-green-600">
@@ -196,4 +195,4 @@ const CheckoutFrom = () => {
   );
 };
 
-export default CheckoutFrom;
+export default PaymentFrom;
