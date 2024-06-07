@@ -13,7 +13,8 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
     _id,
     product_condition,
     product_image,
-    product_email,
+    seller_email,
+    seller_name,
     product_category,
   } = productDetails;
   const [axiosSecure] = useAxiosSecure();
@@ -25,9 +26,10 @@ const BookingModal = ({ productDetails, setProductDetails }) => {
     const phone = form.phone.value;
     const meetingLocation = form.meetingLocation.value;
     const bookingDetails = {
+      seller_name,
+      seller_email,
       product_id: _id,
       product_name,
-      product_email,
       product_image,
       product_condition,
       product_category,

@@ -42,8 +42,9 @@ const AddProduct = () => {
             phoneNumber,
           } = data;
           const productDetails = {
+            seller_name: user?.email,
+            seller_email: user?.displayName,
             product_name: name,
-            product_email: user?.email,
             product_category: category,
             product_resale_price: price,
             product_image: imgURL,

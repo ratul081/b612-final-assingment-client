@@ -83,15 +83,18 @@ const CheckoutFrom = () => {
 
         // now save the payment in the database
         const payment = {
-          email: user?.email,
-          price: totalPrice,
+          buyerName: user?.displayName,
+          buyerEmail: user?.email,
+          totalPrice: totalPrice,
           transactionId: paymentIntent.id,
           date: new Date(), // utc date convert. use moment js to
           cartIds: cart.map((item) => item._id),
           productIds: cart.map((item) => item.product_id),
+          productName: cart.map((item) => item.product_name),
+          seller_email: cart.map((item) => item.seller_email),
           status: "pending",
         };
-
+        console.log(payment);
         const res = await axiosSecure.post("/payments", payment);
         //console.log("payment saved", res.data);
         refetch();
@@ -104,7 +107,7 @@ const CheckoutFrom = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          // navigate("/dashboard/paymentHistory");
+          navigate("/dashboard/payment-history");
         }
       }
     }

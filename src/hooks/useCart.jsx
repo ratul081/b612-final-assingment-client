@@ -13,7 +13,7 @@ const useCart = () => {
       return res.data.data;
     },
   });
-  console.log(cart);
+  // console.log(cart);
   return [cart, refetch];
 };
 

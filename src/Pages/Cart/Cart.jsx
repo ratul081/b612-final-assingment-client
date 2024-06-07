@@ -69,7 +69,9 @@ const Cart = () => {
                               <div>
                                 <dt className="inline">Price:</dt>
                                 <dd className="inline">
-                                  {(cartProduct?.product_resale_price).toFixed(3)}
+                                  {parseFloat(
+                                    cartProduct?.product_resale_price
+                                  ).toFixed(3)}
                                 </dd>
                               </div>
                               <div>

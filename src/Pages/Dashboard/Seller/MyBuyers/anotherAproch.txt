@@ -1,12 +1,23 @@
 import React from "react";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
-import useCart from "../../../../hooks/useCart";
+import useAuth from "../../../../hooks/useAuth";
 
 const MyBuyers = () => {
   const [axiosSecure] = useAxiosSecure();
-  const [cart] = useCart();
-  console.log("🚀 ~ MyBuyers ~ cart:", cart)
+  const { user } = useAuth();
+  const { data: allPayments = [], refetch } = useQuery({
+    queryKey: ["all-payments"],
+    queryFn: async () => {
+      const res = await axiosSecure.get("/all-payments");
+      return res.data.data;
+    },
+  });
+  const buyerEmail = allPayments.filter((item) => {
+    const emails = item.seller_email.filter((item) => item === user.email);
+    console.log(emails);
+  });
+  // console.log(allPayments);
 
   return (
     <div>

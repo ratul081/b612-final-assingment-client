@@ -47,7 +47,7 @@ const JustForYou = () => {
         {adItemsShow &&
           adItemsShow.map((item, idx) => (
             <div key={idx} className="mt-14">
-              <div className="flex justify-between">
+              <div className="flex justify-end">
                 <p className="text-xs text-white bg-[#DB4444] rounded p-2">
                   -35%
                 </p>
