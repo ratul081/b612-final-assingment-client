@@ -40,5 +40,5 @@
 
 ## Admin
 
-<> Email : admin@gmail.com <>
-<> Password : 123456789 <>
+Email : admin@gmail.com
+Password : Pa$$w0rd!
