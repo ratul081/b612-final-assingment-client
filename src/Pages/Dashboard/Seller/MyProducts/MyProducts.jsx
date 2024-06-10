@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAuth from "../../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MyProducts = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -64,6 +65,9 @@ const MyProducts = () => {
 
   return (
     <div className="m-4">
+      <Helmet>
+        <title>Use ME | My Products</title>
+      </Helmet>
       {myProducts.length === 0 ? (
         <div> No data found</div>
       ) : (

@@ -2,10 +2,14 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import DashboardSidebar from "../Pages/Dashboard/Dashboard/DashboardSidebar";
+import { Helmet } from "react-helmet-async";
 
 const DashboardLayout = () => {
   return (
     <div className="">
+      <Helmet>
+        <title>Use ME | Dashboard</title>
+      </Helmet>
       {/* <Header></Header> */}
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

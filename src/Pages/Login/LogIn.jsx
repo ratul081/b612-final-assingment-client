@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 const LogIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -44,6 +45,9 @@ const LogIn = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Use ME | Login</title>
+      </Helmet>
       <section className="bg-white ">
         <div className="container px-6 py-24 mx-auto lg:py-32">
           <div className="lg:flex">

@@ -28,9 +28,7 @@
   - React-Router-DOM
   - TanStack
   - Axios
-  - Slick Carousel
   - Loader Spinner
-  - React-Rating
   - Hot-Toast
   - Stripe
   - React-Fontawesome

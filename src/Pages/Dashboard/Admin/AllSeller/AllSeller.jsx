@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { MdVerified } from "react-icons/md";
 import { MdErrorOutline } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AllSeller = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -38,6 +39,9 @@ const AllSeller = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Use ME | All sellers</title>
+      </Helmet>
       <p className="text-center text-3xl font-semibold mb-8">Sellers</p>
       <div className="overflow-x-auto">
         <table className="table">

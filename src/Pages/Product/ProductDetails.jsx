@@ -3,7 +3,9 @@ import { CiHeart } from "react-icons/ci";
 import { TbTruckDelivery, TbTruckReturn } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAuth from "../../hooks/useAuth";
 const ProductDetails = ({ productData, setProductDetails }) => {
+  const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const {
     product_name,
@@ -42,24 +44,26 @@ const ProductDetails = ({ productData, setProductDetails }) => {
       <p>Condition type: {product_condition}</p>
       <p>Posted on: {product_postdate}</p>
       <p>Contact Number: {product_phoneNumber}</p>
-      <div className="flex gap-6">
-        <label
-          htmlFor="booking-modal"
-          onClick={() => setProductDetails(productData)}
-          className="btn btn-error text-white">
-          Book now
-        </label>
-        <button
-          onClick={() => handleReportItem(productData._id)}
-          className={`btn btn-warning  ${
-            productData?.reported && "btn-disabled"
-          }`}>
-          Report
-        </button>
-        <button>
-          <CiHeart className="h-10 w-10" />
-        </button>
-      </div>
+      {user && (
+        <div className="flex gap-6">
+          <label
+            htmlFor="booking-modal"
+            onClick={() => setProductDetails(productData)}
+            className="btn btn-error text-white">
+            Book now
+          </label>
+          <button
+            onClick={() => handleReportItem(productData._id)}
+            className={`btn btn-warning  ${
+              productData?.reported && "btn-disabled"
+            }`}>
+            Report
+          </button>
+          <button>
+            <CiHeart className="h-10 w-10" />
+          </button>
+        </div>
+      )}
       <div className="border rounded">
         <div className="lg:m-6 md:m-2 m-4">
           <div className="flex gap-4">

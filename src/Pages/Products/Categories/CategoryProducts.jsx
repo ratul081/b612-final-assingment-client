@@ -3,17 +3,21 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 
 import Categories from "./Categories";
 import ProductsDisplay from "../ProductsDisplay/ProductsDisplay";
+import { Helmet } from "react-helmet-async";
 
 const CategoryProducts = () => {
   const categoryProduct = useLoaderData().data;
-  //console.log("🚀 ~ CategoryProducts ~ categoryProduct:", categoryProduct);
+  console.log("🚀 ~ CategoryProducts ~ categoryProduct:", categoryProduct);
   const navigate = useNavigate();
   return (
     <div className="md:mt-12 sm-8">
+      <Helmet>
+        <title>Use ME | Category- {categoryProduct[0]?.product_category} </title>
+      </Helmet>
       <p className="md:text-3xl text-xl my-4">Here some devices you can buy</p>
       <div className="lg:grid lg:grid-cols-5 flex flex-col sm:gap-4">
         <div>
-          <Categories products={categoryProduct}></Categories>
+          <Categories></Categories>
           <div className="flex justify-end mt-5">
             <button
               onClick={() => navigate(-1)}

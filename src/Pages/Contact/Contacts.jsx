@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const Contacts = () => {
   return (
     <div>
+      <Helmet>
+        <title>Use ME | Contacts</title>
+      </Helmet>
       <section className="bg-white">
         <div className="container px-6 py-6 mx-auto">
           <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 lg:mx-24">

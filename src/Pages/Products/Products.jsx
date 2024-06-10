@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Categories from "./Categories/Categories";
 import ProductsDisplay from "./ProductsDisplay/ProductsDisplay";
+import { Helmet } from "react-helmet-async";
 
 const Products = () => {
   const [page, setPage] = useState(0);
@@ -28,6 +29,9 @@ const Products = () => {
 
   return (
     <div className="md:mt-12 sm-8">
+      <Helmet>
+        <title>Use ME | Products</title>
+      </Helmet>
       <p className="md:text-3xl text-xl my-4">Here some devices you can buy</p>
       <div className="lg:grid lg:grid-cols-5 flex flex-col sm:gap-4">
         <div>
@@ -63,9 +67,7 @@ const Products = () => {
                       </button>
                     </li>
                     {[...Array(pages).keys()].map((number) => (
-                      <li
-                      className="grid grid-cols-2 lg:flex"
-                      key={number}>
+                      <li className="grid grid-cols-2 lg:flex" key={number}>
                         <button
                           onClick={() => setPage(number)}
                           className={`flex items-center justify-center px-4 h-10 leading-tight border ${

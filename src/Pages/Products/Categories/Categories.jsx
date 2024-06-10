@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Pagination from "./Pagination";
 
 const Categories = () => {
@@ -22,13 +21,15 @@ const Categories = () => {
   //console.log("🚀 ~ categories ~ categories:", categories);
 
   return (
-    <Pagination
-      data={categories}
-      pageNumber={pageNumber}
-      setPageNumber={setPageNumber}
-      pageSize={pageSize}
-      setPageSize={setPageSize}
-    />
+    <>
+      <Pagination
+        data={categories}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+        pageSize={pageSize}
+        setPageSize={setPageSize}
+      />
+    </>
   );
 };
 

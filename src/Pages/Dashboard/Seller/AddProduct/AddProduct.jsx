@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 const image = import.meta.env.VITE_image_upload_token;
 
 const AddProduct = () => {
@@ -42,8 +43,8 @@ const AddProduct = () => {
             phoneNumber,
           } = data;
           const productDetails = {
-            seller_name: user?.email,
-            seller_email: user?.displayName,
+            seller_name: user?.displayName,
+            seller_email: user?.email,
             product_name: name,
             product_category: category,
             product_resale_price: price,
@@ -54,7 +55,7 @@ const AddProduct = () => {
             product_phoneNumber: phoneNumber,
             product_postdate: formatDate(today, "dd-mm-yy"),
           };
-          //console.log("🚀 ~ .then ~ productDetails:", productDetails);
+          console.log("🚀 ~ .then ~ productDetails:", productDetails);
           axiosSecure
             .post("/add-product", productDetails)
             .then((res) => {
@@ -92,6 +93,9 @@ const AddProduct = () => {
 
   return (
     <div className="m-4">
+      <Helmet>
+        <title>Use ME | Add Product</title>
+      </Helmet>
       <p className="font-semibold text-2xl">Add product</p>
       <form
         onSubmit={handleSubmit(handleAddProduct)}

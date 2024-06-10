@@ -43,7 +43,7 @@ const JustForYou = () => {
         </div>
       </div>
 
-      <div className="flex justify-around">
+      <div className="flex flex-col lg:flex-row mx-24 justify-around ">
         {adItemsShow &&
           adItemsShow.map((item, idx) => (
             <div key={idx} className="mt-14">
@@ -53,7 +53,11 @@ const JustForYou = () => {
                 </p>
               </div>
               <div>
-                <img src={item?.product_image} className="w-44 h-32" alt="" />
+                <img
+                  src={item?.product_image}
+                  className="w-full object-cover h-32"
+                  alt=""
+                />
               </div>
               <div className="flex justify-center">
                 <button className="bg-black w-full rounded-b text-white mt-4 p-2">
@@ -63,8 +67,8 @@ const JustForYou = () => {
               <div className="my-4 space-y-2">
                 <p>{item?.product_name}</p>
                 <p>
-                  ৳{(parseFloat(item?.product_resale_price) * 3.5).toFixed(1)}
-                  <del> ৳ {item?.product_resale_price} </del>
+                  ৳{(parseFloat(item?.product_resale_price) * 3.5).toFixed(1)}{" "}
+                  <del>৳ {item?.product_resale_price} </del>
                 </p>
               </div>
             </div>

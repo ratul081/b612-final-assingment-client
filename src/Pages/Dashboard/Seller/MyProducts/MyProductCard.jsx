@@ -31,7 +31,7 @@ const MyProductCard = ({
             {product_name}
           </h5>
         </Link>
-        <div className="mb-3 font-normal  text-gray-700">
+        <div className="mb-3 font-normal line-clamp-4 text-gray-700">
           {product_description}
         </div>
         <div className="space-x-4">

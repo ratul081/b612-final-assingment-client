@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
+import { Helmet } from "react-helmet-async";
 const ReportedItems = () => {
   const [axiosSecure] = useAxiosSecure();
   const {
@@ -18,6 +19,9 @@ const ReportedItems = () => {
   // //console.log(reportedItems[0]);
   return (
     <div>
+      <Helmet>
+        <title>Use ME | Reported Items</title>
+      </Helmet>
       <section>
         <div className="mx-auto lg:p-0 sm:px-6 sm:py-12">
           <div className="mx-auto">

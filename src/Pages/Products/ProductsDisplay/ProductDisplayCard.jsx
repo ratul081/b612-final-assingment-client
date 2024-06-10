@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const ProductDisplayCard = ({ product, setProductDetails }) => {
+  const { user } = useAuth();
   const {
     product_name,
     user_email,
@@ -33,7 +35,7 @@ const ProductDisplayCard = ({ product, setProductDetails }) => {
         <div className="flex justify-between">
           <Link
             to={`/products/${product?._id}`}
-            className="inline-flex items-center px-3 font-medium text-center text-white bg-blue-700 rounded-lg">
+            className="inline-flex btn items-center px-3 font-medium text-center text-white bg-blue-700 rounded-lg">
             See more
             <svg
               className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
@@ -50,12 +52,14 @@ const ProductDisplayCard = ({ product, setProductDetails }) => {
               />
             </svg>
           </Link>
-          <label
-            htmlFor="booking-modal"
-            onClick={() => setProductDetails(product)}
-            className="btn btn-accent text-white">
-            Book now
-          </label>
+          {user && (
+            <label
+              htmlFor="booking-modal"
+              onClick={() => setProductDetails(product)}
+              className="btn btn-accent text-white">
+              Book now
+            </label>
+          )}
         </div>
       </div>
     </div>

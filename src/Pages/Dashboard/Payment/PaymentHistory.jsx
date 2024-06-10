@@ -2,6 +2,7 @@ import React from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import { useQuery } from "react-query";
+import { Helmet } from "react-helmet-async";
 
 const PaymentHistory = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -18,6 +19,9 @@ const PaymentHistory = () => {
 
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <Helmet>
+        <title>Use ME | Payment History</title>
+      </Helmet>
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>

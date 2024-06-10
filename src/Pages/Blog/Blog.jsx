@@ -1,8 +1,12 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 const Blog = () => {
   return (
     <div className="min-h-screen lg:m-12 m-8 space-y-6">
+      <Helmet>
+        <title>Use ME | Blog</title>
+      </Helmet>
       <p className="text-center my-16 font-bold md:text-3xl text-2xl text-pink-700 lg:text-5xl">
         Here is some frequently asked questions <br /> that has been prepared
         for you.
@@ -75,41 +79,41 @@ const Blog = () => {
               <span className="font-semibold">
                 1. Verification of Individual Units:
               </span>{" "}
-               Unit tests allow developers to verify that each unit of
-              code behaves correctly in isolation, ensuring that it produces the
+              Unit tests allow developers to verify that each unit of code
+              behaves correctly in isolation, ensuring that it produces the
               expected output for a given input.
               <br />
               <span className="font-semibold">
                 2. Early Detection of Bugs:
               </span>{" "}
-              By identifying and fixing issues at the unit level,
-              developers can catch bugs early in the development process,
-              preventing them from propagating to other parts of the
-              application.
+              By identifying and fixing issues at the unit level, developers can
+              catch bugs early in the development process, preventing them from
+              propagating to other parts of the application.
               <br />
               <span className="font-semibold">
                 3. Facilitate Refactoring:
               </span>{" "}
-              Unit tests provide a safety net when refactoring code. They
-              ensure that changes to one part of the codebase do not
-              unintentionally break functionality elsewhere.
+              Unit tests provide a safety net when refactoring code. They ensure
+              that changes to one part of the codebase do not unintentionally
+              break functionality elsewhere.
               <br />
               <span className="font-semibold">
                 4.btn-disabled Documentation and Code Understanding:
               </span>{" "}
-              Unit tests serve as living documentation for the codebase,
-              helping developers understand how individual components are
-              intended to work and how they interact
+              Unit tests serve as living documentation for the codebase, helping
+              developers understand how individual components are intended to
+              work and how they interact
               <span className="font-semibold">
                 with each other. Improved Code Quality:
-              </span>{" "} Writing unit tests encourages writing modular, testable code
-              with clear separation of concerns, leading to higher code quality
-              and maintainability.
+              </span>{" "}
+              Writing unit tests encourages writing modular, testable code with
+              clear separation of concerns, leading to higher code quality and
+              maintainability.
               <br />
-              <span className="font-semibold">5. Regression Testing:</span>{" "}
-              Unit tests act as a form of regression testing, ensuring
-              that existing functionality continues to work as expected even as
-              the codebase evolves over time.
+              <span className="font-semibold">5. Regression Testing:</span> Unit
+              tests act as a form of regression testing, ensuring that existing
+              functionality continues to work as expected even as the codebase
+              evolves over time.
             </p>
           </li>
           <li>
@@ -125,26 +129,33 @@ const Blog = () => {
               updates. With a thriving ecosystem including tools like React
               Router and Redux, React is favored for its simplicity and
               adaptability, catering to projects of varying scales.
-              <span className="font-semibold"><br />b. Angular:</span>  Angular,
-              backed by Google, is a comprehensive framework tailored for
-              enterprise-level applications. Following the Model-View-Controller
-              (MVC) pattern, it offers features like two-way data binding and
-              dependency injection, coupled with a robust CLI for streamlined
-              project management. Angular's opinionated nature suits projects
-              requiring strict adherence to guidelines, particularly in
-              corporate settings.
-              <span className="font-semibold"><br />3. Vue.js:</span> Vue.js, a
-              progressive framework, amalgamates the best attributes of React
-              and Angular. Known for its simplicity and incremental adoption,
-              Vue.js provides features like single-file components and reactive
-              data binding. Its gentle learning curve and extensive ecosystem
-              make it an attractive choice for developers of all proficiencies,
-              particularly for its ease of integration with existing projects.
-              In essence, React thrives on simplicity and adaptability, Angular
-              excels in robustness for large-scale applications, while Vue.js
-              strikes a balance between the two, offering simplicity and ease of
-              adoption. The selection among them hinges on project requisites,
-              team competencies, and individual inclinations.
+              <span className="font-semibold">
+                <br />
+                b. Angular:
+              </span>{" "}
+              Angular, backed by Google, is a comprehensive framework tailored
+              for enterprise-level applications. Following the
+              Model-View-Controller (MVC) pattern, it offers features like
+              two-way data binding and dependency injection, coupled with a
+              robust CLI for streamlined project management. Angular's
+              opinionated nature suits projects requiring strict adherence to
+              guidelines, particularly in corporate settings.
+              <span className="font-semibold">
+                <br />
+                3. Vue.js:
+              </span>{" "}
+              Vue.js, a progressive framework, amalgamates the best attributes
+              of React and Angular. Known for its simplicity and incremental
+              adoption, Vue.js provides features like single-file components and
+              reactive data binding. Its gentle learning curve and extensive
+              ecosystem make it an attractive choice for developers of all
+              proficiencies, particularly for its ease of integration with
+              existing projects. In essence, React thrives on simplicity and
+              adaptability, Angular excels in robustness for large-scale
+              applications, while Vue.js strikes a balance between the two,
+              offering simplicity and ease of adoption. The selection among them
+              hinges on project requisites, team competencies, and individual
+              inclinations.
             </p>
           </li>
         </ol>

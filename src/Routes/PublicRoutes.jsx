@@ -3,7 +3,6 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import Main from "../Layouts/Main";
 import About from "../Pages/About/About";
 import Cart from "../Pages/Cart/Cart";
-import CheckOut from "../Pages/CheckOut/CheckOut";
 import Contacts from "../Pages/Contact/Contacts";
 import AdminDashboard from "../Pages/Dashboard/Admin/AdminDashboard";
 import AllSeller from "../Pages/Dashboard/Admin/AllSeller/AllSeller";
@@ -61,7 +60,6 @@ export const routes = createBrowserRouter([
           ),
       },
       { path: "/carts", element: <Cart></Cart> },
-      { path: "/checkout", element: <CheckOut></CheckOut> },
       {
         path: "/dashboard",
         element: (

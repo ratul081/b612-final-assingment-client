@@ -79,7 +79,7 @@ const NavBar = () => {
               {menu}
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
+          <Link to="/" className="btn btn-ghost lg:text-xl">
             Use ME
           </Link>
         </div>
@@ -89,7 +89,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <div className="relative mt-4 md:mt-0">
+          <div className="relative mt-4 md:mt-0 hidden lg:block">
             <input
               type="text"
               className="w-full py-2 pl-2 pr-12 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
@@ -114,7 +114,7 @@ const NavBar = () => {
             <Link to="/whitelist">
               <AiOutlineHeart className="w-6 h-6" />
             </Link>
-            <Link to="/carts" className="relative mx-2">
+            <Link to="/carts" className="relative -mx-2 lg:mx-2">
               <BsCart3 className="w-6 h-6 ml-4" />
               {cart.length !== 0 && (
                 <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
@@ -138,10 +138,10 @@ const NavBar = () => {
             </div>
           ) : (
             <div className="flex items-center">
-              <Link to="/login" className="btn mx-2">
+              <Link to="/login" className="btn mx-2 btn-xs lg:btn-md">
                 Log in
               </Link>
-              <Link to="/sign-up" className="btn">
+              <Link to="/sign-up" className="btn btn-xs lg:btn-md">
                 Sign Up
               </Link>
             </div>

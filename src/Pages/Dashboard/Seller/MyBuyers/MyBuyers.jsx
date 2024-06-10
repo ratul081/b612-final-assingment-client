@@ -1,15 +1,26 @@
 import React from "react";
-import useAxiosSecure from "../../../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 import { useQuery } from "react-query";
-import useCart from "../../../../hooks/useCart";
+import useAuth from "../../../../hooks/useAuth";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const MyBuyers = () => {
   const [axiosSecure] = useAxiosSecure();
-  const [cart] = useCart();
-  console.log("🚀 ~ MyBuyers ~ cart:", cart)
+  const { user } = useAuth();
 
+  const { data: buyerInfo = [], refetch } = useQuery({
+    queryKey: ["buyerInfo", user?.email],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/orders-seller?email=${user?.email}`);
+      return res.data.data;
+    },
+  });
+  console.log(buyerInfo);
   return (
     <div>
+      <Helmet>
+        <title>Use ME | My Buyers</title>
+      </Helmet>
       <p className="text-center text-3xl font-semibold mb-8">Buyers</p>
       <div className="overflow-x-auto">
         <table className="table">
@@ -17,14 +28,13 @@ const MyBuyers = () => {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Location</th>
-              <th>Account type</th>
-              <th></th>
+              <th>Product</th>
+              <th>Transaction Id</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            {[...Array(2).keys()].map((_, idx) => (
+            {buyerInfo.map((buyer, idx) => (
               <tr key={idx}>
                 <td>
                   <div className="flex items-center gap-3">
@@ -37,31 +47,16 @@ const MyBuyers = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">Hart Hagerty</div>
-                      <div className="text-sm opacity-50">United States</div>
+                      <div className="font-bold">{buyer?.buyer_name}</div>
+                      <div className="text-sm opacity-50">
+                        {buyer?.buyer_email}
+                      </div>
                     </div>
                   </div>
                 </td>
-                <td>Zemlak, Daniel and Leannon</td>
-                <td>Purple</td>
-                <th>
-                  <button className="transition text-red-600">
-                    <span className="sr-only">Remove item</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="h-8 w-8">
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
-                      />
-                    </svg>
-                  </button>
-                </th>
+                <td>{buyer?.product_name}</td>
+                <td>{buyer?.transactionId}</td>
+                <td>{buyer?.paid ? "Paid" : "Pending"}</td>
               </tr>
             ))}
           </tbody>

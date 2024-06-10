@@ -5,6 +5,7 @@ import { routes } from "./Routes/PublicRoutes";
 function App() {
   return (
     <div className="max-w-[1440px] mx-auto">
+      
       <RouterProvider router={routes}></RouterProvider>
     </div>
   );

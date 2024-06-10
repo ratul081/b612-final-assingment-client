@@ -5,6 +5,7 @@ import useAuth from "../../../../hooks/useAuth";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const MyOrders = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -19,6 +20,9 @@ const MyOrders = () => {
   });
   return (
     <div>
+      <Helmet>
+        <title>Use ME | My orders</title>
+      </Helmet>
       <p className="text-center text-3xl font-semibold mb-8">Yours Orders</p>
       {orders.length == 0 ? (
         <div>No data found</div>
