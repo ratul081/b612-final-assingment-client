@@ -40,3 +40,13 @@
 
 Email : admin@gmail.com
 Password : Pa$$w0rd!
+
+## Seller
+
+Email : seller@gmail.com
+Password : Pa$$w0rd!
+
+## Buyer
+
+Email : buyer@gmail.com
+Password : Pa$$w0rd!
